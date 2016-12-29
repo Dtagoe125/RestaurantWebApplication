@@ -1,0 +1,14 @@
+{% load static %}
+<html>
+
+	<head> 
+		<title>HomePage</title>
+	</head>
+
+	<body>
+		<h1>HomePage</h1>
+		Here is knowledge <strong>{{ boldmessage }}</strong><br/>
+		<a href="/about/">About</a><br/>
+		<img src="{% static 'images/site_logo.png' %}" alt="Site Logo" />
+	</body>
+</html>
