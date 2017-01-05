@@ -1,5 +1,8 @@
 from django.contrib import admin
-from models import Sections, Menus
+from models import Food, Menu
 
-admin.site.register(Sections)
-admin.site.register(Menus)
+class CategoryAdmin(admin.ModelAdmin):
+	prepopulated_fields = {'slug':('name',)}
+
+admin.site.register(Food, CategoryAdmin)
+admin.site.register(Menu, CategoryAdmin)

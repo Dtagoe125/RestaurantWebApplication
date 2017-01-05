@@ -12,14 +12,17 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">Charleston Chew Menu</h3>
-				{% if menus %}
+				{% if food_items %}
 				<ul class="list-group">
-				{% for Menu in menus %}
-					<li class="list-group-item"><a href="{% url 'category' category.slug %}"><p>{{ Menu.title }}</p></a></li>
+				{% for food in food_items %}
+					<li class="list-group-item"><a href="{% url 'menu' menu.slug %}"><p>{{ food.name }}</p></a></li>
+					<li class="list-group-item"><a href="{% url 'menu' menu.slug %}"><p>{{ food.image }}</p></a></li>
+					<li class="list-group-item"><a href="{% url 'menu' menu.slug %}"><p>{{ food.description }}</p></a></li>
+					<li class="list-group-item"><a href="{% url 'menu' menu.slug %}"><p>{{ food.price }}</p></a></li>
 				{% endfor %}
 				</ul>
 				{% else %}
-					<strong>There are no Menus!</strong>
+					<strong>Sorry we ran out of food!</strong>
 				{% endif %}
 			</div>
 		</div>
