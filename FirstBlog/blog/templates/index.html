@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+
+
+<div class="row placeholders">
+	<div class="col-xs-12 col-md-12 placeholder">
+		<div class="panel panel-primary" style="background-color: transparent;">
+			<div class="panel-heading" style="background-color: transparent;">
+				<h3 class="panel-title" >Charleston Chew</h3>
+				{% if menus %}
+				<ul class="list-group">
+				{% for menu in menus %}
+					<li class="list-group-item" style="background-color: transparent;"><a href="{% url 'menu' menu.id %}"><p style="color: #fff; size: xx-large">{{ menu.title }}</p></a></li>
+				{% endfor %}
+				</ul>
+				{% else %}
+					<strong>There are no Menus!</strong>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+	<!--<img src="{% static 'images/photo.jpeg' %}">-->
+
+{% endblock %}

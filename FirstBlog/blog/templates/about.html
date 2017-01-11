@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Meet The Team{% endblock %}
+
+{% block body_block %}
+
+
+<div class="row placeholders">
+	<div class="col-xs-12 col-md-12 placeholder">
+		<div class="panel panel-primary" style="background-color: transparent;">
+			<div class="panel-heading" style="background-color: transparent;">
+				<h3 class="panel-title">Meet The Team</h3>
+				{% if employees %}
+					<ul class="list-group">
+					{% for employee in employees %}
+						<li class="list-group-item" style="background-color: transparent;"><p style="color: white">{{ employee.fname }} {{ employee.lname }}</p></li>
+						<li class="list-group-item" style="background-color: transparent;"><p style="color: white">{{ employee.title }}</p></li>
+						<li class="list-group-item" style="background-color: transparent;"><img src="{{ employee.image.url }}" height="250" width="250"></li>
+						<li class="list-group-item" style="background-color: transparent;"><p style="color: white">{{ employee.tagline }}</p></li>
+						<li class="list-group-item" style="background-color: transparent;"><p style="color: white"><strong>{{ employee.bio }}</strong></p></li>
+					{% endfor %}
+					</ul>
+				{% else %}
+					<strong>We Fired Everybody!</strong>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+	<!--<img src="{% static 'images/photo.jpeg' %}">-->
+
+{% endblock %}
