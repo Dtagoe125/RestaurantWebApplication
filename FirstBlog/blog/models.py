@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.template.defaultfilters import slugify
+from posttweet import post_to_twitter
+
 
 
 class Menu(models.Model):
@@ -21,8 +23,21 @@ class Food(models.Model):
 	vegetarian = models.BooleanField(default=True)
 	
 
+	#def __unicode__(self):
+	#	return self.name
+
 	def __unicode__(self):
-		return self.name
+		return u'%s' % self.name
+
+    #def get_absolute_url(self):
+    #    return self.link
+
+    # the following method is optional
+	def get_twitter_message(self):
+		return u'What we\'ve got cookin\': %s - %s' \
+			% (self.name, self.price)
+	
+		models.signals.post_save.connect(post_to_twitter, sender=Food)
 
 class Employee(models.Model):
 	fname = models.CharField(max_length=128)
