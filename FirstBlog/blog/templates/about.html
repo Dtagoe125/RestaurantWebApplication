@@ -14,7 +14,7 @@
 				{% if employees %}
 					<ul class="list-group">
 					{% for employee in employees %}
-						<li class="list-group-item" style="background-color: transparent;"><p style="color: white">{{ employee.fname }} {{ employee.lname }}</p></li>
+						<li class="list-group-item" style="background-color: transparent;"><p style="color: white; font-size: 200%;">{{ employee.fname }} {{ employee.lname }}</p></li>
 						<li class="list-group-item" style="background-color: transparent;"><p style="color: white">{{ employee.title }}</p></li>
 						<li class="list-group-item" style="background-color: transparent;"><img src="{{ employee.image.url }}" height="250" width="250"></li>
 						<li class="list-group-item" style="background-color: transparent;"><p style="color: white">{{ employee.tagline }}</p></li>

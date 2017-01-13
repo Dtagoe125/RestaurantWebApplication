@@ -62,3 +62,11 @@
 .list-group-item {
     background-color: rgba(0,0,0,.0001);
 }
+
+.form-group {
+
+  body {
+    color: #fff;
+  }
+
+}

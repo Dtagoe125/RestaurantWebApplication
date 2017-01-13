@@ -9,11 +9,12 @@
 	<div class="col-xs-12 col-md-12 placeholder">
 		<div class="panel panel-primary" style="background-color: transparent;">
 			<div class="panel-heading" style="background-color: transparent;">
-				<h3 class="panel-title" >Charleston Chew</h3>
+				<img src="https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-9/13697222_128237667610497_6517294305746120301_n.jpg?oh=b57c85cadcd21667e7d884bcf40ea3d0&oe=58D9FDF7" height="250" width="250">
+				<h3 class="panel-title" style="font-size: 500%;">Charleston Chew</h3>
 				{% if menus %}
 				<ul class="list-group">
 				{% for menu in menus %}
-					<li class="list-group-item" style="background-color: transparent;"><a href="{% url 'menu' menu.id %}"><p style="color: #fff; size: xx-large">{{ menu.title }}</p></a></li>
+					<li class="list-group-item" style="background-color: transparent;"><a href="{% url 'menu' menu.id %}"><p style="color: #fff; font-size: 250%;">{{ menu.title }}</p></a></li>
 				{% endfor %}
 				</ul>
 				{% else %}

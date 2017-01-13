@@ -8,14 +8,14 @@
 	<div class="col-xs-12 col-md-12 placeholder">
 		<div class="panel panel-primary" style="background-color: transparent;">
 			<div class="panel-heading" style="background-color: transparent;">
-				<h3 class="panel-title">Charleston Chew Menu</h3>
+				<h3 class="panel-title" style="font-size: 350%;">Charleston Chew Menu</h3>
 				{% if food_items %}
 					<ul class="list-group">
 					{% for food in food_items %}
-						<li class="list-group-item"><p style="color: white">{{ food.name }}</p></li>
+						<li class="list-group-item"><p style="color: white; font-size: 200%;">{{ food.name }}</p></li>
 						<li class="list-group-item"><img src="{{ food.image.url }}" height="250" width="250"></li>
-						<li class="list-group-item"><p style="color: white">{{ food.description }}</p></li>
-						<li class="list-group-item"><p style="color: white">$ {{ food.price }}</p></li>
+						<li class="list-group-item"><p style="color: white; font-size: 150%;">{{ food.description }}</p></li>
+						<li class="list-group-item"><p style="color: white; font-size: 150%;">$ {{ food.price }}</p></li>
 					{% endfor %}
 					</ul>
 				{% else %}
